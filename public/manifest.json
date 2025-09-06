@@ -1,0 +1,21 @@
+{
+  "name": "Krishi Chheda - Portfolio",
+  "short_name": "Krishi Portfolio",
+  "description": "Professional portfolio showcasing development work and photography",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/og.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "photography", "development"],
+  "lang": "en",
+  "dir": "ltr"
+}
