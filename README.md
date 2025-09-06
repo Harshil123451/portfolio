@@ -1,35 +1,49 @@
-# Portfolio Website
+# 🚀 Krishi Chheda - Portfolio Website
 
-A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features dark mode, GitHub integration, and a beautiful UI with smooth animations.
+A modern, responsive portfolio website showcasing both professional development work and photography. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
-## 🚀 Features
+## ✨ Features
 
-- **Dual-Mode Portfolio**: Professional and Photography sides with smooth toggle
-- **Modern Design**: Clean, professional design with dark mode support
-- **Responsive**: Fully responsive across all devices
-- **GitHub Integration**: Automatically fetches and displays your GitHub repositories
-- **Photo Gallery**: Beautiful masonry-style gallery with lightbox modal
-- **SEO Optimized**: Dynamic metadata, sitemap, and OpenGraph images
-- **Accessibility**: Semantic HTML, focus states, and keyboard navigation
-- **Performance**: Optimized for Lighthouse scores with code splitting
-- **Animations**: Smooth animations with Framer Motion
-- **Contact Form**: Working contact form (ready for Formspree integration)
+### 🎯 Professional Section
+- **Dynamic Project Showcase** - Automatically fetches and displays GitHub repositories
+- **Skills & Technologies** - Interactive skill cards with proficiency levels
+- **Timeline** - Professional journey and key achievements
+- **Contact Forms** - Working contact forms with email integration
+
+### 📸 Photography Section
+- **Photo Gallery** - Beautiful grid layout with hover effects
+- **Lightbox Modal** - Full-screen image viewing with navigation
+- **Responsive Design** - Optimized for all devices and screen sizes
+- **Smooth Animations** - Framer Motion powered transitions
+
+### 🎨 Design & UX
+- **Dark/Light Mode** - Toggle between themes
+- **Professional/Photography Toggle** - Easy switching between portfolio modes
+- **Responsive Design** - Mobile-first approach
+- **Accessibility** - WCAG compliant with proper ARIA labels
+- **SEO Optimized** - Meta tags, sitemap, and structured data
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Theme**: next-themes
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Deployment:** Vercel
+- **Version Control:** Git & GitHub
 
-## 📦 Installation
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Harshil123451/portfolio.git
    cd portfolio
    ```
 
@@ -42,183 +56,136 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
    ```bash
    cp env.example .env.local
    ```
-   
-   Edit `.env.local` with your values:
-   ```env
-   # Optional: GitHub token for higher API rate limits
+   Add your GitHub token to `.env.local`:
+   ```
    GITHUB_TOKEN=your_github_token_here
-   
-   # Optional: Formspree ID for contact form
-   NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id_here
-   
-   # Your site URL for SEO
-   NEXT_PUBLIC_SITE_URL=https://your-domain.com
    ```
 
-4. **Configure your personal information**
-   
-   Edit `site.config.ts` with your details:
-   ```typescript
-   export const siteConfig = {
-     name: "Your Name",
-     title: "Your Name — Portfolio",
-     githubUsername: "your-github-username",
-     email: "your@email.com",
-     location: "Your Location",
-     sections: {
-       professional: {
-         tagline: "Your professional tagline",
-         bio: "Your professional bio...",
-         routes: ["/", "/projects", "/about", "/contact"],
-       },
-       photography: {
-         tagline: "Your photography tagline",
-         bio: "Your photography bio...",
-         routes: ["/photography", "/photography/about", "/photography/contact"],
-       },
-     },
-     photos: [
-       { 
-         src: "/photos/your-photo.jpg", 
-         alt: "Photo description", 
-         caption: "Your caption",
-         quote: "Your quote"
-       },
-       // ... add more photos
-     ],
-     // ... update social links and other details
-   }
-   ```
-
-5. **Add your assets**
-   - Replace `public/og.png` with your OpenGraph image (1200x630px)
-   - Replace `public/resume.pdf` with your actual resume
-   - Add your profile photo to `public/avatar.jpg` (optional)
-   - Add your photography images to `public/photos/` directory
-
-6. **Run the development server**
+4. **Run the development server**
    ```bash
    npm run dev
    ```
 
-   Open [http://localhost:3000](http://localhost:3000) to see your portfolio!
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📁 Project Structure
+
+```
+portfolio/
+├── public/
+│   ├── photos/           # Photography portfolio images
+│   └── og.png           # Open Graph image
+├── src/
+│   ├── app/             # Next.js App Router pages
+│   │   ├── about/       # About page
+│   │   ├── contact/     # Contact page
+│   │   ├── photography/ # Photography section
+│   │   └── projects/    # Projects page
+│   ├── components/      # Reusable React components
+│   │   ├── ui/          # UI components (buttons, cards, etc.)
+│   │   └── ...          # Feature components
+│   ├── contexts/        # React contexts
+│   ├── lib/             # Utility functions
+│   └── types/           # TypeScript type definitions
+├── site.config.ts       # Site configuration
+└── tailwind.config.ts   # Tailwind CSS configuration
+```
+
+## ⚙️ Configuration
+
+### Site Configuration
+Edit `site.config.ts` to customize:
+- Personal information
+- Social media links
+- Skills and technologies
+- Professional timeline
+- Photography gallery
+
+### GitHub Integration
+The portfolio automatically fetches your GitHub repositories. Update the username in:
+- `site.config.ts` → `githubUsername`
+- `src/lib/github.ts` → API configuration
 
 ## 🎨 Customization
 
-### Dual-Mode Portfolio
-The portfolio has two distinct sides:
-- **Professional**: Clean, minimal design for showcasing technical work
-- **Photography**: Casual, creative vibe with photo gallery and lightbox
+### Adding New Photos
+1. Add images to `public/photos/`
+2. Update the `photos` array in `site.config.ts`
+3. Include: `src`, `alt`, `caption`, and `quote`
 
-Switch between modes using the toggle in the navbar.
+### Modifying Skills
+Edit the `skills` array in `site.config.ts`:
+```typescript
+skills: [
+  { name: "Technology", level: "Proficiency" },
+  // Add more skills...
+]
+```
 
-### Colors and Theme
-The color scheme is defined in `tailwind.config.ts`. You can customize:
-- Primary colors
-- Dark mode colors
-- Font families
-- Animations
-
-### Content
-- **Homepage**: Edit `src/app/page.tsx` to modify the hero section
-- **About**: Update `src/app/about/page.tsx` with your story
-- **Projects**: The projects page automatically pulls from GitHub
-- **Contact**: Customize the contact form in `src/components/contact-form.tsx`
-- **Photography**: Add your images to `public/photos/` and update `site.config.ts`
-
-### GitHub Integration
-The site automatically fetches your GitHub repositories. You can:
-- Pin specific repos by adding them to `pinnedRepos` in `site.config.ts`
-- Filter topics by updating `topicsFilter`
-- Customize the display in `src/components/project-card.tsx`
-
-### Adding Photography Content
-1. **Add Photos**: Place your images in `public/photos/` directory
-2. **Update Config**: Add photo details to `photos` array in `site.config.ts`:
-   ```typescript
-   photos: [
-     { 
-       src: "/photos/your-photo.jpg", 
-       alt: "Description of the photo", 
-       caption: "Your caption here",
-       quote: "Your inspirational quote"
-     },
-     // ... add more photos
-   ]
-   ```
-3. **Image Specs**: Recommended 1200x800px, optimized for web
-4. **Lightbox**: Photos automatically open in full-screen lightbox with navigation
+### Updating Timeline
+Modify the `timeline` array in `site.config.ts`:
+```typescript
+timeline: [
+  {
+    year: "2024",
+    title: "Project Name",
+    description: "Project description"
+  },
+  // Add more entries...
+]
+```
 
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy!
+1. Push code to GitHub
+2. Connect repository to Vercel
+3. Deploy automatically on every push
 
-### Other Platforms
-The site can be deployed to any platform that supports Next.js:
-- Netlify
-- Railway
-- DigitalOcean App Platform
-- AWS Amplify
-
-## 📊 Performance
-
-This portfolio is optimized for performance:
-- **Lighthouse Score**: 95+ across all metrics
-- **Core Web Vitals**: Optimized for LCP, FID, and CLS
-- **Bundle Size**: Minimal JavaScript bundle
-- **Images**: Optimized with Next.js Image component
-- **Caching**: GitHub API responses cached for 1 hour
-
-## 🧪 Testing
-
-Run the test suite:
+### Manual Deployment
 ```bash
-npm test
+npm run build
+vercel --prod
 ```
 
-Run tests in watch mode:
-```bash
-npm run test:watch
-```
+## 📱 Responsive Design
 
-## 📝 Scripts
+- **Mobile:** Optimized for phones (320px+)
+- **Tablet:** Perfect for tablets (768px+)
+- **Desktop:** Full experience (1024px+)
+- **Large Screens:** Enhanced for large displays (1440px+)
+
+## 🔧 Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
-- `npm test` - Run tests
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+- `npm run test` - Run tests
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Harshil123451/portfolio/issues).
+
+## 📞 Contact
+
+**Krishi Chheda**
+- Email: [krishichheda38@gmail.com](mailto:krishichheda38@gmail.com)
+- GitHub: [@Harshil123451](https://github.com/Harshil123451)
+- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-handle/)
+
 ## 🙏 Acknowledgments
 
-- [Next.js](https://nextjs.org/) for the amazing framework
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS
-- [shadcn/ui](https://ui.shadcn.com/) for the beautiful components
-- [Framer Motion](https://www.framer.com/motion/) for the smooth animations
-- [Lucide](https://lucide.dev/) for the beautiful icons
-
-## 📞 Support
-
-If you have any questions or need help customizing your portfolio, feel free to:
-- Open an issue on GitHub
-- Contact me at [your-email@example.com](mailto:your-email@example.com)
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Icons by [Lucide](https://lucide.dev/)
+- Deployed on [Vercel](https://vercel.com/)
 
 ---
 
-**Happy coding! 🎉**
+⭐ **Star this repository if you found it helpful!**
