@@ -1,11 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { fetchUserRepos } from '@/lib/github'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    const { searchParams } = new URL(request.url)
-    const username = searchParams.get('username') || 'Harshil123451'
-    
+    const username = 'Harshil123451'
     const repos = await fetchUserRepos(username)
     
     return NextResponse.json(repos, {

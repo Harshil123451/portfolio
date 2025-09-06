@@ -13,11 +13,11 @@ export function generateSEO({
   title = siteConfig.title,
   description = siteConfig.sections.professional.tagline,
   image = '/og.png',
-  url = 'https://your-domain.com',
+  url = 'https://portfolio-zeta-five-66.vercel.app',
   type = 'website'
 }: SEOProps = {}): Metadata {
   return {
-    metadataBase: new URL('https://your-domain.com'),
+    metadataBase: new URL('https://portfolio-zeta-five-66.vercel.app'),
     title,
     description,
     openGraph: {
@@ -60,7 +60,7 @@ export function generateSEO({
 }
 
 export function generateSitemap() {
-  const baseUrl = 'https://your-domain.com'
+  const baseUrl = 'https://portfolio-zeta-five-66.vercel.app'
   
   return [
     {
